@@ -10,15 +10,57 @@
 <body>
     <nav class="flex justify-between items-center py-2 px-6 bg-white shadow-sm">
         <h2 class="font-bold text-xl text-blue-700">starProtect | Admin</h2>
-        
+        <h3>Select a Option for Underwriter</h3>
+        <div>
+            <button class="btn btn-outline"><a href="../index.html">Logout</a></button>
+        </div>
       </nav>
-      <section class="h-[93vh] bg-pink-400">
-        <aside class="flex flex-col w-[200px] p-[20px] gap-5 h-full bg-red-400">
-            <button class="btn btn-solid">Option1</button>
-            <button class="btn btn-solid">Option1</button>
-            <button class="btn btn-solid">Option1</button>
-            <button class="btn btn-solid">Option1</button>
+
+      <section class="h-[92vh] flex">
+        <aside class="flex flex-col justify-between w-[280px] p-[20px] h-full bg-blue-900">
+            <div>
+                <h3 class="text-white text-center mb-3">Manage Underwriters</h3>
+                <div class="flex flex-col gap-5" id="admin-menu">
+                    <button class="btn btn-solid" id="register">Underwriter Registration</button>
+                    <button class="btn btn-solid" id="search">search Underwriter</button>
+                    <button class="btn btn-solid" id="update">update password</button>
+                    <button class="btn btn-solid" id="delete">Delete Underwriter</button>
+                </div>
+                
+            </div>
+            <div class="w-full flex flex-col">
+                <button class="btn btn-solid"><a href="../index.html">logout</a></button>
+            </div>
         </aside>
+        <div class="w-[calc(100%-280px)]">
+            <div class="h-full flex justify-center items-center" id="admin-img">
+                <img src="../assets/admin-home.jpg" alt="manager" class="w-3/5">
+            </div>
+            <div id="register-content">
+                <form action="">
+                    <h1 class="font-bold text-2xl text-center mb-3">Register Underwriter</h1>
+                    <div class="form-item">
+                        <label for="u-id">Underwriter ID</label>
+                        <input type="text" id="u-id" value="892321" disabled>
+                    </div>
+                    <div class="form-item">
+                        <label for="u-name">Customer Name*</label>
+                        <input type="text" id="u-name" required maxlength="50">
+                    </div>
+                    <div class="form-item">
+                        <label for="u-dob">Date of Birth</label>
+                        <input type="date" id="u-dob">
+                    </div>
+                    <div class="form-item">
+                        <label for="u-doj">Date of Joining</label>
+                        <input type="date" id="u-doj">
+                    </div>
+                </form>
+            </div>
+            <div id="search-content">search</div>
+            <div id="update-content">update</div>
+            <div id="delete-content">delete</div>
+        </div>
       </section>
       <script src="../script.js"></script>
 </body>
