@@ -36,12 +36,12 @@
             <div class="h-full flex justify-center items-center" id="admin-img">
                 <img src="../assets/admin-home.jpg" alt="manager" class="w-3/5">
             </div>
-            <div id="register-content">
-                <form action="">
+            <div class="admin-menu-item" id="register-content">
+                <form action="" class="flex flex-col gap-3" id="registration-form">
                     <h1 class="font-bold text-2xl text-center mb-3">Register Underwriter</h1>
                     <div class="form-item">
                         <label for="u-id">Underwriter ID</label>
-                        <input type="text" id="u-id" value="892321" disabled>
+                        <input type="text" id="u-id" disabled>
                     </div>
                     <div class="form-item">
                         <label for="u-name">Customer Name*</label>
@@ -49,19 +49,25 @@
                     </div>
                     <div class="form-item">
                         <label for="u-dob">Date of Birth</label>
-                        <input type="date" id="u-dob">
+                        <input type="date" id="u-dob" required>
                     </div>
                     <div class="form-item">
                         <label for="u-doj">Date of Joining</label>
-                        <input type="date" id="u-doj">
+                        <input type="date" id="u-doj" required>
                     </div>
+                    <div class="form-item mb-2">
+                        <label for="u-pass">Default Password</label>
+                        <input type="password" id="u-pass" class="mb-1" required>
+                        <div class="w-full flex justify-end text-sm underline"><input type="checkbox" class="mr-1" id="show-pass"> Show Password</div>
+                    </div>
+                    <button type="submit" class="btn btn-solid">Register</button>   
                 </form>
             </div>
-            <div id="search-content">search</div>
-            <div id="update-content">update</div>
-            <div id="delete-content">delete</div>
+            <div class="admin-menu-item" id="search-content"></div>
+            <div class="admin-menu-item" id="update-content">update</div>
+            <div class="admin-menu-item" id="delete-content">delete</div>
         </div>
       </section>
-      <script src="../script.js"></script>
+      <script type="module" src="../script.js"></script>
 </body>
 </html>
