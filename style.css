@@ -68,3 +68,11 @@ input[type="checkbox"]{
     width: 15px;
     padding: 0 !important;
 }
+
+table, th, td{
+    border: 2px solid rgb(196, 196, 196);
+}
+
+th,td{
+    padding: 3px 10px;
+}

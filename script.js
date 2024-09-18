@@ -37,7 +37,7 @@ function openTab(activeContent, activeButton, item) {
         defaultField();
     }
     else if(item==='search'){
-        activeContent.innerHTML = underwriterData;
+       console.log(underwriterData, "xxxxxxxx")
     }
 }
 
@@ -69,7 +69,7 @@ registrationForm.addEventListener('submit', (e)=>{
         password: document.getElementById("u-pass").value
     }
     underwriterData.push(user);
-    alert("Registration Successful.\nUser ID:"+underwriterData[underwriterData.length-1].id + "\nPassword:"+underwriterData[underwriterData.length-1].password)
+    alert("Registration Successful.\nUser ID: "+underwriterData[underwriterData.length-1].id + "\nPassword: "+underwriterData[underwriterData.length-1].password)
     registrationForm.reset();
     defaultField();
     document.getElementById("u-pass").type="password"
@@ -115,3 +115,31 @@ function handlePassword(){
     else
         passwordField.type="password";
 }
+
+const searchForm = document.getElementById("search-form");
+searchForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const suID = document.getElementById("su-id");
+    const result = underwriterData.find(user => user.id === parseInt(suID.value));
+    const searchResult = document.getElementById("search-result");
+    if(result){
+        searchResult.innerHTML = `<table class="border-collapse w-full">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Date of Joining</th>
+                            <th>Default Password</th>
+                        </tr>
+                        <tr>
+                            <td>${result.id}</td>
+                            <td>${result.name}</td>
+                            <td>${result.dob}</td>
+                            <td>${result.doj}</td>
+                            <td>${result.password}</td>
+                        </tr>
+                       </table>`
+    }
+    else
+    searchResult.innerHTML='No underwriter found.'
+})

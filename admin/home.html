@@ -63,7 +63,16 @@
                     <button type="submit" class="btn btn-solid">Register</button>   
                 </form>
             </div>
-            <div class="admin-menu-item" id="search-content"></div>
+            <div class="admin-menu-item" id="search-content">
+                <form id="search-form">
+                    <h1 class="font-bold text-2xl text-center mb-3">Search Underwriter by ID</h1>
+                    <label>Underwriter ID</label>
+                    <div class="flex justify-between gap-3 mb-4"><input type="text" id="su-id"> <button type="submit" class="btn btn-solid"><img src="../assets/search-icon.png" alt="search icon" class="w-6 invert"></button></div>
+                    <div id="search-result">
+                       
+                    </div>
+                </form>
+            </div>
             <div class="admin-menu-item" id="update-content">update</div>
             <div class="admin-menu-item" id="delete-content">delete</div>
         </div>
