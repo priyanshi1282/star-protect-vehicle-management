@@ -84,8 +84,8 @@ function generateRandomPassword() {
     // Ensure at least one character from each type is included
     const allChars = lowerCase + upperCase + numbers + specialChars;
 
-    // Password length between 6 to 12 characters
-    const passwordLength = Math.floor(Math.random() * (12 - 6 + 1)) + 6; // Random length between 6 and 12
+    // Password length between 4 to 8 characters
+    const passwordLength = Math.floor(Math.random() * (8 - 4 + 1)) + 4; // Random length between 4 and 8
 
     let password = "";
 
@@ -95,7 +95,7 @@ function generateRandomPassword() {
     password += numbers[Math.floor(Math.random() * numbers.length)];
     password += specialChars[Math.floor(Math.random() * specialChars.length)];
 
-    // Now, fill the remaining length of the password with random characters from all sets
+    // Fill the remaining length of the password with random characters from all sets
     for (let i = 4; i < passwordLength; i++) {
         password += allChars[Math.floor(Math.random() * allChars.length)];
     }
@@ -103,8 +103,13 @@ function generateRandomPassword() {
     // Shuffle the characters to make the password more random
     password = password.split('').sort(() => Math.random() - 0.5).join('');
 
+    // Check for password already exist in underwriter data
+    const result = underwriterData.find(user => user.password === password);
+    if(result)
+        generateRandomPassword();
     return password;
 }
+
 
 document.getElementById("show-pass").addEventListener('click', handlePassword)
 
