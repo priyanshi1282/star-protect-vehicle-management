@@ -154,13 +154,12 @@ updatePasswordForm.addEventListener('submit', (e)=>{
     e.preventDefault();
     const updateID = document.getElementById("up-id");
     const updatePass = document.getElementById("up-pass");
-    const error = document.querySelector('.error-text');
+    const error = document.querySelectorAll('.error-text')[0];
     if(!validatePassword(updatePass.value)){
         console.log(updatePass)
         error.innerHTML = 'Password should be combination of lower case, uppercase alphabets along with special character and number'
         return;
     }
-    console.log(updateID.value)
     for(let i=0; i<underwriterData.length; i++)
         if(underwriterData[i].id=== parseInt(updateID.value)){
             underwriterData[i].password = updatePass.value;
@@ -178,3 +177,21 @@ function validatePassword(password) {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,8}$/;
     return regex.test(password);
 }
+
+const deleteUserForm = document.getElementById("du-form");
+deleteUserForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const deleteID = document.getElementById('du-id');
+    const errorText = document.querySelectorAll(".error-text")[1];
+    for(let i=0; i<underwriterData.length; i++){
+        if(underwriterData[i].id === parseInt(deleteID.value)){
+            underwriterData.splice(i,1);
+            alert("Underwriter data deleted successfully.");
+            errorText.innerHTML="";
+            deleteUserForm.reset();
+            return;
+        }
+    }
+    errorText.innerHTML='Underwriter with given ID is not present';
+    console.log(errorText)
+})
