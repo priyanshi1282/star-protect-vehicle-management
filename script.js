@@ -148,3 +148,33 @@ searchForm.addEventListener('submit', (e)=>{
     else
     searchResult.innerHTML='No underwriter found.'
 })
+
+const updatePasswordForm = document.getElementById("up-form");
+updatePasswordForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const updateID = document.getElementById("up-id");
+    const updatePass = document.getElementById("up-pass");
+    const error = document.querySelector('.error-text');
+    if(!validatePassword(updatePass.value)){
+        console.log(updatePass)
+        error.innerHTML = 'Password should be combination of lower case, uppercase alphabets along with special character and number'
+        return;
+    }
+    console.log(updateID.value)
+    for(let i=0; i<underwriterData.length; i++)
+        if(underwriterData[i].id=== parseInt(updateID.value)){
+            underwriterData[i].password = updatePass.value;
+            alert("Password updated successfully.");
+            error.innerHTML="";
+            updatePasswordForm.reset();
+            return;
+        }
+    
+        error.innerHTML='Underwriter with given ID is not present'
+    
+})
+
+function validatePassword(password) {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,8}$/;
+    return regex.test(password);
+}

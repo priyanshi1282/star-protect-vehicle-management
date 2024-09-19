@@ -69,11 +69,23 @@
                     <label>Underwriter ID</label>
                     <div class="flex justify-between gap-3 mb-4"><input type="text" id="su-id"> <button type="submit" class="btn btn-solid"><img src="../assets/search-icon.png" alt="search icon" class="w-6 invert"></button></div>
                     <div id="search-result">
-                       
                     </div>
                 </form>
             </div>
-            <div class="admin-menu-item" id="update-content">update</div>
+            <div class="admin-menu-item" id="update-content">
+                <form class="flex flex-col gap-3" id="up-form">
+                    <div class="form-item">
+                        <label>Underwriter ID</label>
+                        <input type="number" required id="up-id">
+                    </div>
+                    <div class="form-item">
+                        <label>New Password</label>
+                        <input type="password" id="up-pass">
+                    </div>
+                    <p class="error-text text-red-600 mb-2"></p>
+                    <button class="btn btn-solid">Update Password</button>
+                </form>
+            </div>
             <div class="admin-menu-item" id="delete-content">delete</div>
         </div>
       </section>
