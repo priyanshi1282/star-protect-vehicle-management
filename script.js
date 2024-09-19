@@ -15,6 +15,12 @@ document.getElementById('user-login')?.addEventListener('submit', (e)=>{
     console.log(Uerror )
 })
 
+document.getElementById("vehicle-form")?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    alert("New Insurance created successfully");
+    document.getElementById("vehicle-form")?.reset();
+})
+
 
 // ******************** Admin menu items
 // Get all buttons and tab contents

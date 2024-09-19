@@ -3,9 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home | Underwriter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <nav class="flex justify-between items-center py-2 px-6 bg-white shadow-sm">
+        <h2 class="font-bold text-xl text-blue-700">starProtect | Underwriter</h2>
+        <div>
+            <button class="btn btn-outline"><a href="index.html">Logout</a></button>
+        </div>
+      </nav>
+      <section class="flex justify-center items-center h-[92vh]">
+        <form class="flex flex-col gap-3" id="vehicle-form">
+            <h1 class="font-bold text-2xl text-center mb-3">Create a New Vehicle Insurance</h1>
+            <div class="flex justify-between gap-3"><div class="form-item">
+                <label>Vehicle No.</label>
+                <input type="text" maxlength="10">
+            </div>
+            <div class="form-item">
+                <label>Vehicle Type</label>
+                <select>
+                    <option value="2 wheeler">2 Wheeler</option>
+                    <option value="4 wheeler">4 Wheeler</option>
+                </select>
+            </div></div>
+            
+            <div class="form-item">
+                <label>Customer Name</label>
+                <input type="text" maxlength="50">
+            </div>
+            <div class="flex justify-between gap-3">
+                <div class="form-item">
+                    <label>Engine No.</label>
+                    <input type="number" >
+                </div>
+                <div class="form-item">
+                    <label>Chasis No.</label>
+                    <input type="number" >
+                </div>
+            </div>
+            <div class="form-item">
+                <label>Phone No.</label>
+                <input type="number" maxlength="10">
+            </div>
+            <div class="flex justify-between gap-3"><div class="form-item">
+                <label>Premium Amount</label>
+                <input type="number">
+            </div>
+            <div class="form-item">
+                <label>Type</label>
+                <select>
+                    <option value="full insurance">Full Insurance</option>
+                    <option value="third party">Third Party</option>
+                </select>
+            </div></div>
+            
+            <div  class="flex justify-between gap-3">
+                <div class="form-item">
+                    <label>From Date</label>
+                    <input type="date" >
+                </div>
+                <div class="form-item">
+                    <label>To Date</label>
+                    <input type="date" >
+                </div>
+            </div>
+            <div class="form-item">
+                <label>Underwriter ID</label>
+                <input type="number" required>
+            </div>
+            <button type="submit" class="btn btn-solid">Create Insurance</button>
+        </form>
+      </section>
+      <script src="script.js"></script>
 </body>
 </html>
