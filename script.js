@@ -1,3 +1,21 @@
+//  ************************** underwriter login
+document.getElementById('user-login')?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    let userId = document.getElementById("ul-id");
+    let password =  document.getElementById("ul-pass");
+    const Uerror = document.querySelector("#error");
+    for(let i=0; i<underwriterData.length; i++){
+        if(underwriterData[i].id === parseInt(userId.value) && underwriterData[i].password === password.value){
+            window.location.href = 'user-home.html';
+        return; 
+        }
+    }
+
+    Uerror.innerText = 'Invalid username or password';
+    console.log(Uerror )
+})
+
+
 // ******************** Admin menu items
 // Get all buttons and tab contents
 const registerBtn = document.getElementById('register');
@@ -12,10 +30,10 @@ const deleteContent = document.getElementById('delete-content');
 const adminImg =  document.getElementById("admin-img");
 
 // Add event listeners to each button
-registerBtn.addEventListener('click', () => openTab(registerContent, registerBtn, 'register'));
-searchBtn.addEventListener('click', () => openTab(searchContent, searchBtn, 'search'));
-updateBtn.addEventListener('click', () => openTab(updateContent, updateBtn, 'update'));
-deleteBtn.addEventListener('click', () => openTab(deleteContent, deleteBtn, 'delete'));
+registerBtn?.addEventListener('click', () => openTab(registerContent, registerBtn, 'register'));
+searchBtn?.addEventListener('click', () => openTab(searchContent, searchBtn, 'search'));
+updateBtn?.addEventListener('click', () => openTab(updateContent, updateBtn, 'update'));
+deleteBtn?.addEventListener('click', () => openTab(deleteContent, deleteBtn, 'delete'));
 
 // Function to open the clicked tab and hide the others
 function openTab(activeContent, activeButton, item) {
@@ -59,7 +77,7 @@ let underwriterData = [
 ]
 
 const registrationForm = document.getElementById("registration-form");
-registrationForm.addEventListener('submit', (e)=>{
+registrationForm?.addEventListener('submit', (e)=>{
     e.preventDefault();
     let user = {
         id: parseInt(document.getElementById("u-id").value),
@@ -111,7 +129,7 @@ function generateRandomPassword() {
 }
 
 
-document.getElementById("show-pass").addEventListener('click', handlePassword)
+document.getElementById("show-pass")?.addEventListener('click', handlePassword)
 
 function handlePassword(){
     let passwordField = document.getElementById("u-pass");
@@ -122,7 +140,7 @@ function handlePassword(){
 }
 
 const searchForm = document.getElementById("search-form");
-searchForm.addEventListener('submit', (e)=>{
+searchForm?.addEventListener('submit', (e)=>{
     e.preventDefault();
     const suID = document.getElementById("su-id");
     const result = underwriterData.find(user => user.id === parseInt(suID.value));
@@ -150,7 +168,7 @@ searchForm.addEventListener('submit', (e)=>{
 })
 
 const updatePasswordForm = document.getElementById("up-form");
-updatePasswordForm.addEventListener('submit', (e)=>{
+updatePasswordForm?.addEventListener('submit', (e)=>{
     e.preventDefault();
     const updateID = document.getElementById("up-id");
     const updatePass = document.getElementById("up-pass");
@@ -179,7 +197,7 @@ function validatePassword(password) {
 }
 
 const deleteUserForm = document.getElementById("du-form");
-deleteUserForm.addEventListener('submit', (e)=>{
+deleteUserForm?.addEventListener('submit', (e)=>{
     e.preventDefault();
     const deleteID = document.getElementById('du-id');
     const errorText = document.querySelectorAll(".error-text")[1];
@@ -195,3 +213,4 @@ deleteUserForm.addEventListener('submit', (e)=>{
     errorText.innerHTML='Underwriter with given ID is not present';
     console.log(errorText)
 })
+

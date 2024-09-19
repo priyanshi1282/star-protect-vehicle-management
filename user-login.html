@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="flex justify-between items-center py-2 px-6 bg-white shadow-sm">
+        <h2 class="font-bold text-xl text-blue-700">starProtect | Underwriter</h2>
+        <button class="btn btn-outline"><a href="index.html">Back</a></button>
+      </nav>
+      <form class="mx-auto my-10" id="user-login">
+        <h1 class="font-bold text-2xl text-center mb-3">Welcome Back, User!</h1>
+        <div class="form-item mb-4">
+            <label for="ul-id">Underwriter ID*</label>
+            <input type="number" id="ul-id" required placeholder="Please enter User ID">
+        </div>
+        <div class="form-item mb-4">
+            <label for="ul-pass">Password*</label>
+            <input type="password" id="ul-pass" required placeholder="Please enter Password">
+        </div>
+        <p class="error text-red-600 mb-2" id="error"></p>
+        <div class="form-item">
+            <button type="submit" class="btn btn-solid">Login</button>
+        </div>
+        
+      </form>
+      <script src="script.js"></script>
+</body>
+</html>
